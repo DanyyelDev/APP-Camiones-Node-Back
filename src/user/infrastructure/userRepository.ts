@@ -24,8 +24,6 @@ export const createUser = async (user: User): Promise<boolean> => {
         const [queryResult, _fieldPacket] = await connection.query('SELECT * FROM Users WHERE id = ? ', [user.id]);
         
         if (Object.keys(queryResult).length === 0 ) {
-            console.log("entro");
-            
             await connection.query(
                 'INSERT INTO Users (address, email, full_name, id, phone, status, user_type) VALUES (?, ?, ?, ?, ?, ?, ?)',
                 [
@@ -62,8 +60,6 @@ export const updateUser = async (user: User): Promise<boolean> => {
 
         if (existingUsers == null) {
             await connection.end();
-            console.log("El usuario no existe en la base de datos" );
-            
             return false; // El usuario no existe en la base de datos
         } else {
             await connection.query(
@@ -97,9 +93,7 @@ export const updateUserStatus = async (status: String, id: number): Promise<bool
         const [existingUsers, _fieldPacket] = await connection.query('SELECT * FROM Users WHERE id = ?', [id]);
 
         if (existingUsers == null) {
-            await connection.end();
-            console.log("El usuario no existe en la base de datos" );
-            
+            await connection.end(); 
             return false; // El usuario no existe en la base de datos
         } else {
             await connection.query(

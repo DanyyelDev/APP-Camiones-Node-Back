@@ -6,7 +6,7 @@ import cargoRequestRouter from './src/Routes/cargoRequest-route';
 
 const app = express();
 app.use(express.json()) 
-const port = parseInt(process.env.PORT) || process.argv[3] || 8080;
+const port =  3000;
 
 app.use('/api/user', userRouter)
 app.use('/api/vehicles', vehicleRouter)

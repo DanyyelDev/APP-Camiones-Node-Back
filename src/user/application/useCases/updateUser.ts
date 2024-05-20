@@ -1,5 +1,5 @@
-import { User } from "user/domain/entities/user";
-import { updateUser, updateUserStatus } from "user/infrastructure/userRepository";
+import { User } from "../../domain/entities/user";
+import { updateUser, updateUserStatus } from "../../infrastructure/userRepository";
 import { UserValidationService } from "../services/userValidationService";
 
 export async function updateDataUser(user: User): Promise<boolean> {

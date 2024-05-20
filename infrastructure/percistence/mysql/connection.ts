@@ -7,6 +7,5 @@ export async function connectToMySQL(): Promise<mysql.Connection> {
         password: '',
         database: 'applogistica'
     });
-    console.log('Connected to MySQL database');
     return connection;
 }

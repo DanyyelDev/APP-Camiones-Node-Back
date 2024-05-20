@@ -1,6 +1,6 @@
 import * as express from 'express'
 
-import { User } from 'user/domain/entities/user'
+import { User } from '../user/domain/entities/user'
 import { registerDataUser } from '../user/application/useCases/registerUser'
 import { updateDataUser, updateStatusUser } from '../user/application/useCases/updateUser'
 import { getDataAllUsers, getDataUser } from '../user/application/useCases/getUser'
@@ -61,7 +61,7 @@ router.get('/all', async (_req, res) => {
 
 router.get('/test', async (req, res) => {
     try {
-        res.json({ "msg": "Hello world" });
+        res.json({ "msg": "End point users is ON" });
     } catch (error) {
         res.send("Wrong id")
     }

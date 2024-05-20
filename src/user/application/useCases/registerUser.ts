@@ -1,6 +1,6 @@
-import { User } from "user/domain/entities/user";
+import { User } from "../../domain/entities/user";
 import { UserValidationService } from "../services/userValidationService";
-import { createUser } from "user/infrastructure/userRepository";
+import { createUser } from "../../infrastructure/userRepository";
 
 
 export async function registerDataUser(user: User): Promise<boolean> {

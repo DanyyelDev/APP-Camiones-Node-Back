@@ -1,4 +1,4 @@
-import { User } from 'user/domain/entities/user';
+import { User } from '../../domain/entities/user';
 import { ValidationResult } from '../../../../types/types';
 
 export class UserValidationService {

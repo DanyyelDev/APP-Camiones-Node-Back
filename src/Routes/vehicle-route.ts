@@ -61,5 +61,13 @@ router.get('/all', async (_req, res) => {
     }
 });
 
+router.get('/test', async (req, res) => {
+    try {
+        res.json({ "msg": "End point vehicles is ON" });
+    } catch (error) {
+        res.send("Wrong id")
+    }
+});
+
 
 export default router

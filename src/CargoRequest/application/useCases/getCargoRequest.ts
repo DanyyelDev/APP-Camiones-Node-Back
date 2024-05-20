@@ -1,4 +1,4 @@
-import { getCargoRequest, getAllCargoRequests } from 'CargoRequest/infrastructure/cargoRequestRepository';
+import { getCargoRequest, getAllCargoRequests } from '../../infrastructure/cargoRequestRepository';
 
 export async function getDataCargoRequest(idRequest: number): Promise<void> {
     // Aquí puedes agregar la lógica para registrar el vehículo en la base de datos

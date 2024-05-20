@@ -1,6 +1,6 @@
 import { CargoRequest } from '../../domain/entities/cargoRequest';
 import { CargoRequestValidationService } from '../services/cargoRequestValidationService';
-import { createCargoRequest } from 'CargoRequest/infrastructure/cargoRequestRepository';
+import { createCargoRequest } from '../../infrastructure/cargoRequestRepository';
 
 export async function registerCargoRequest(cargoRequest: CargoRequest): Promise<boolean> {
     // Aquí puedes agregar la lógica para registrar el vehículo en la base de datos

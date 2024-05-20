@@ -1,9 +1,9 @@
 import * as express from 'express';
 import { CargoRequest } from '../CargoRequest/domain/entities/cargoRequest';
-import { registerCargoRequest } from 'CargoRequest/application/useCases/registerCargoRequest';
-import { updateDataCargoRequest } from 'CargoRequest/application/useCases/updateCargoRequest';
-import { deleteDataCargoRequest } from 'CargoRequest/application/useCases/deleteCargoRequest';
-import { getDataAllCargoRequest } from 'CargoRequest/application/useCases/getCargoRequest';
+import { registerCargoRequest } from '../CargoRequest/application/useCases/registerCargoRequest';
+import { updateDataCargoRequest } from '../CargoRequest/application/useCases/updateCargoRequest';
+import { deleteDataCargoRequest } from '../CargoRequest/application/useCases/deleteCargoRequest';
+import { getDataAllCargoRequest } from '../CargoRequest/application/useCases/getCargoRequest';
 
 const router = express.Router();
 
@@ -59,6 +59,14 @@ router.get('/all', async (_req, res) => {
     } catch (error) {
         console.error("Error al obtener todas las solicitudes de carga:", error);
         res.status(500).send("Error interno del servidor");
+    }
+});
+
+router.get('/test', async (req, res) => {
+    try {
+        res.json({ "msg": "End point cargo request is ON" });
+    } catch (error) {
+        res.send("Wrong id")
     }
 });
 
