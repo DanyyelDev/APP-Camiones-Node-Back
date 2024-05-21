@@ -11,7 +11,7 @@ export const createVehicle = async (vehicle: Vehicle) => {
             console.log("entro");
             
             await connection.query(
-                'INSERT INTO Vehicles (body_type, brand, cargo_capacity, id, model, owner, plate_number, location, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                'INSERT INTO Vehicles (body_type, brand, cargo_capacity, id, model, owner, driver, plate_number, location, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [
                     vehicle.body_type,
                     vehicle.brand,
@@ -19,6 +19,7 @@ export const createVehicle = async (vehicle: Vehicle) => {
                     vehicle.id,
                     vehicle.model,
                     vehicle.owner,
+                    vehicle.driver,
                     vehicle.plate_number,
                     vehicle.location,
                     vehicle.status

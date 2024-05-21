@@ -1,6 +1,6 @@
 export interface User {
     id: number;
-    user_type: string;
+    user_type: 'CC' | 'CE';
     full_name: string;
     email: string;
     phone: string;

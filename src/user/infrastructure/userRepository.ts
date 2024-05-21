@@ -123,3 +123,13 @@ export const getAllUsers = async () => {
         throw new Error('Error al obtener usuarios desde la base de datos: ' + error);
     }
 };
+
+export const getAvailableCargoRequest = async (idVehicle: number) => {
+    try {
+        const connection = await connectToMySQL();
+        const [queryResult, _fieldPacket] = await connection.query('SELECT * FROM CargoRequests WHERE');
+        return queryResult;
+    } catch (error) {
+        throw new Error('Error al obtener usuarios desde la base de datos: ' + error);
+    }
+};

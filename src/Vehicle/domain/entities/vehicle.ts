@@ -6,10 +6,11 @@ export interface Vehicle {
   cargo_capacity: number;
   body_type: string;
   owner: number;
+  driver: number;
   location: string;
   status: 'AVAILABLE' | 'UNAVAILABLE';
 }
-  
+
 export class Vehicle implements Vehicle {
   constructor(public readonly vehicleData: Vehicle) {
     this.id = vehicleData.id;
@@ -19,6 +20,7 @@ export class Vehicle implements Vehicle {
     this.cargo_capacity = vehicleData.cargo_capacity;
     this.body_type = vehicleData.body_type;
     this.owner = vehicleData.owner;
+    this.driver = vehicleData.driver;
     this.location = vehicleData.location;
     this.status = vehicleData.status;
   }

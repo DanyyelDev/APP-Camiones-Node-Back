@@ -8,6 +8,7 @@ export interface CargoRequest {
   weight: number;
   insured_value: number;
   packaging: string;
+  state: 'AVAILABLE' | 'INPROCESS' | 'COMPLETED'
 }
   
 export class CargoRequest implements CargoRequest {
@@ -21,5 +22,6 @@ export class CargoRequest implements CargoRequest {
     this.weight = cargoRequestData.weight;
     this.insured_value = cargoRequestData.insured_value;
     this.packaging = cargoRequestData.packaging;
+    this.state = cargoRequestData.state;
   }
 }

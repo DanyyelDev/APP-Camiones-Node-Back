@@ -27,7 +27,7 @@ export const createCargoRequest = async (cargoRequest: CargoRequest): Promise<bo
             console.log("entro");
             
             await connection.query(
-                'INSERT INTO CargoRequests (request_date, cargo_owner_id, origin, destination, dimensions, weight, insured_value, packaging) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                'INSERT INTO CargoRequests (request_date, cargo_owner_id, origin, destination, dimensions, weight, insured_value, packaging, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [
                     cargoRequest.request_date,
                     cargoRequest.cargo_owner_id,
@@ -36,7 +36,8 @@ export const createCargoRequest = async (cargoRequest: CargoRequest): Promise<bo
                     cargoRequest.dimensions,
                     cargoRequest.weight,
                     cargoRequest.insured_value,
-                    cargoRequest.packaging
+                    cargoRequest.packaging,
+                    cargoRequest.state
                 ]
             );
             await connection.end();
